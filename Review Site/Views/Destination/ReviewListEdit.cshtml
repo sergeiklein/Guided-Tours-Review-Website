@@ -1,0 +1,61 @@
+﻿@model Review_Site.Models.ReviewModel
+
+@{
+    ViewData["Title"] = "ReviewListEdit";
+}
+
+<h1>ReviewListEdit</h1>
+
+<h4>ReviewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ReviewListEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ReviewerName" class="control-label"></label>
+                <input asp-for="ReviewerName" class="form-control" />
+                <span asp-validation-for="ReviewerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <input asp-for="Content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageURL" class="control-label"></label>
+                <input asp-for="ImageURL" class="form-control" />
+                <span asp-validation-for="ImageURL" class="text-danger"></span>
+            </div>
+@*            <div class="form-group">
+                <label asp-for="Timestamp" class="control-label"></label>
+                <input asp-for="Timestamp" class="form-control" />
+                <span asp-validation-for="Timestamp" class="text-danger"></span>
+            </div>*@
+            <div class="rating form-group">
+                <input asp-for="StarRating" id="rating1" type="radio" name="StarRating" value="1" class="form-control" />
+                <label for="rating1" class="control-label">1</label>
+                <input asp-for="StarRating" id="rating2" type="radio" name="StarRating" value="2" class="form-control" />
+                <label for="rating2" class="control-label">2</label>
+                <input asp-for="StarRating" id="rating3" type="radio" name="StarRating" value="3" class="form-control" />
+                <label for="rating3" class="control-label">3</label>
+                <input asp-for="StarRating" id="rating4" type="radio" name="StarRating" value="4" class="form-control" />
+                <label for="rating4" class="control-label">4</label>
+                <input asp-for="StarRating" id="rating5" type="radio" name="StarRating" value="5" class="form-control" />
+                <label for="rating5" class="control-label">5</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ReviewsList" asp-route-id="@Model?.Id">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

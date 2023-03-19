@@ -1,0 +1,41 @@
+﻿#details_body {
+    background-image: url(../Images/TokyoLarge.jpg)
+}
+
+#details_page_title {
+    font-size: 35px;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+#review_page_background_image {
+    background-image: url(../Images/RomeLarge.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#gallery_image {
+    max-width:48%;
+    margin-left: 5px;
+    padding: 5px;
+    background-color: black;
+    margin: .5%;
+}
+
+#details_category_name {
+   color: white;
+   text-transform: uppercase;
+}
+
+#details_category_data {
+    color: lightgray;
+    font-style: italic;
+    padding: 20px;
+}
+
+
+
+
+

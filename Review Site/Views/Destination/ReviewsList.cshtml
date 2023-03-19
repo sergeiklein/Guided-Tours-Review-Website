@@ -1,0 +1,83 @@
+﻿@model Review_Site.Models.DestinationModel
+
+@{
+    ViewData["Title"] = "ReviewsList";
+}
+<body id="tokyo_review_body">
+        <h1 id="tokyo_review_page_title">REVIEWS</h1>
+
+        <div id="review_link_buttons">
+            <a id="button" asp-action="AddReview" asp-route-id="@Model.Id">Add Review</a>
+            <a id="button" asp-action="Index">Back to List</a>
+        </div>
+
+
+     <div id="tokyo_review_info_block">
+
+            @foreach(var r in Model.Reviews)
+            {
+            <hr id="dest_row_hr">
+
+                <p id="review_image">
+                    <img class="review_image" src="@Html.Raw(r.ImageURL)">
+                </p>
+                <p id="review_datetime"> 
+                    @r.Timestamp
+                </p>
+                <p id="review_content">
+                "@r.Content"
+                </p>
+                <p id="review_name">
+                 @r.ReviewerName
+                </p>
+                <p id="review_star_rating_@r.Id" class="review_star_rating">
+                    @switch (r.StarRating)
+                    {
+                        case "1":
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            break;
+                        case "2":
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            break;
+                        case "3":
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            break;
+                        case "4":
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            break;
+                        case "5":
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            break;
+                    }
+                </p>
+            <a id="button" asp-action="ReviewListEdit" asp-route-id="@r.DestinationsId">Edit</a>
+            }
+   
+    </div>
+
+
+</body>
+
+
+
+

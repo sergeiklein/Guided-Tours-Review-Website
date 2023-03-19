@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Review_Site.Models.DestinationModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div id="add_dest_button_container">
+<a class="invisible_element" asp-action="Create">Add a destination</a>
+<h2 id="destination_tours_list-header">AVAILABLE TOURS</h2>
+<a id="add_dest_button" asp-action="Create">Add a destination</a>
+</div>
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<body>
+    @foreach (var item in Model) 
+    {
+     @*<div style="background-image: url(https://helios-i.mashable.com/imagery/articles/01neFU0eWtDpwBEe1WhOQqM/hero-image.fill.size_1200x1200.v1623385029.jpg)">*@
+       @*<div style = "background-image: @item.ImageURL;">*@
+
+      @*<div class="fill" style="background-image:src(@{Html.Action("Image", item.ImageURL);})">*@
+
+        <div class="dest_row" style="background-image : url('@Url.Content(item.ImageURL.Replace(@"\", "/"))')">
+            <div id="trans-gray-block">
+                <p id="dest_row_tour_country_city_@item.Id" class="dest_row_tour_country_city">
+                    @Html.DisplayFor(modelItem => item.City) | @Html.DisplayFor(modelItem => item.Country)
+                </p>
+                <hr id="dest_row_hr_@item.Id" class="dest_row_hr">
+                <p id="dest_row_tour_name" class="dest_row_tour_name">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </p>
+                <div id="description_block">
+                    <p id="dest_row_tour_description_@item.Id" class="dest_row_tour_description">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </p>
+                </div>
+                <div id="lower_block">
+                <p id="dest_row_tour_duration_@item.Id" class="dest_row_tour_duration">
+                    Tour Duration: @Html.DisplayFor(modelItem => item.TourDuration) Days
+                </p>
+                <p id="dest_row_tour_price_@item.Id" class="dest_row_tour_price">
+                    Price: $@Html.DisplayFor(modelItem => item.Price)
+                </p>
+
+                <a id="details_button" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+
+                <p id="dest_row_star_rating_@item.Id" class="dest_row_star_rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <a asp-action="ReviewsList" asp-route-id="@item.Id" id="reviews_id">@item.Reviews.Count() reviews</a>
+                </p>
+
+                    <p id="dest_row_star_rating_@item.Id" class="dest_row_star_rating">
+@*                        @{
+                            var k = new ReviewModel();
+                            var reviewAverage = k.GetReviewAverage;
+
+                            @switch (reviewAverage)
+                            {
+                                case "1":
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    break;
+                                case "2":
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    break;
+                                case "3":
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    break;
+                                case "4":
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    break;
+                                case "5":
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    break;
+                            }
+                        }*@
+                    </p>
+                </div>
+            </div>
+            <div class="dest_row_delete_edit_buttons">
+            <a class="delete_buttons" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <a class="edit_buttons" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            </div>
+
+        </div>
+    }
+</body>

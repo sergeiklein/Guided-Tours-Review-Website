@@ -1,0 +1,239 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.tours_header {
+    color:brown;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color:lightslategray
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.dest_row {
+    display:inline-flex;
+    justify-content:space-between;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-bottom: 35%;
+    margin: 0px;
+    padding-top: 0px;
+    flex-wrap:wrap;
+    --gap:20px;
+}
+.dest_row_delete_edit_buttons {
+    display: grid;
+    align-content: end;
+}
+
+.delete_buttons {
+    display:none;
+/*    display: inline-flex;*/
+    justify-content: center;
+    border: 2px solid white;
+    background-color: rgba(59, 64, 37, 0.20);
+    padding: 5px 40px;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: Verdana;
+    vertical-align: middle;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.edit_buttons {
+    display: none;
+/*    display: inline-flex;*/
+    justify-content: center;
+    margin: 10px;
+    border: 2px solid white;
+    background-color: rgba(59, 64, 37, 0.20);
+    padding: 5px 40px;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: Verdana;
+    vertical-align: middle;
+    text-decoration: none;
+}
+#add_dest_button_container {
+    display: flex;
+    justify-content:space-between;
+}
+.invisible_element {
+    visibility:hidden;
+    display: inline-flex;
+    justify-content: end;
+    border: 2px solid white;
+    background-color: rgba(59, 64, 37, 0.20);
+    padding: 5px 40px;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: Verdana;
+    vertical-align: middle;
+    text-decoration: none;
+    margin: 10px;
+}
+#add_dest_button {
+    visibility: hidden;
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid white;
+    background-color: rgba(59, 64, 37, 0.20);
+    padding: 5px 40px;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: Verdana;
+    vertical-align: middle;
+    text-decoration: none;
+    margin: 10px;
+}
+#destination_tours_list-header {
+    font-size: 35px;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+/*a.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}*/
+
+#trans-gray-block {
+    width: 35%;
+    height: 0;
+    padding-bottom: 35%;
+    background: rgba(59, 64, 37, 0.50);
+    position: relative;
+/*    display: flex;
+    flex-direction: column;*/
+    /*justify-content: flex-end;*/
+}
+
+.dest_row_tour_country_city {
+    font-size: 21px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 10px;
+    margin: 10px;
+    /*    font-family:"hind guntur"*/
+}
+.dest_row_hr {
+    color: white;
+    height: 0.9px;
+    opacity:1;
+    margin:10px;
+}
+
+.dest_row_tour_name {
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+
+.dest_row_tour_description {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    margin: 20px;
+
+}
+#description_block {
+    width: 100%;
+    overflow: clip;
+}
+#lower_block {
+    text-overflow: ellipsis;
+    overflow: clip;
+
+    position: absolute;
+    bottom:0;
+    width:100%;
+}
+.dest_row_tour_duration {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+.dest_row_tour_price {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+.checked {
+    color: orange;
+}
+.dest_row_star_rating {
+    text-align: center;
+}
+#Navbar_Title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: cadetblue;
+}
+
+
+#details_button {
+    display: flex;
+    justify-content: center;
+    border: 2px solid white;
+    background-color: rgba(59, 64, 37, 0.20);
+    padding: 5px 40px;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: Verdana;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+#all_reviews_button {
+    color:black;
+/*    margin-left:auto;*/
+/*    transform:translateX(1500%);*/
+/*    text-align:center*/
+}
+#admin_mode_button {
+    color: black;
+/*    margin-left: auto;*/
+    /*    transform:translateX(1500%);*/
+/*    text-align: center*/
+}
+#reviews_id {
+    color:white;
+}
+a {
+    color:white;
+}
+footer .container {
+    color:white;
+}
+
+
+
